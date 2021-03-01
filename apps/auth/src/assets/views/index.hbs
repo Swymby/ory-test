@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Auth</title>
+</head>
+
+<body>
+    {{ message }}
+    <form action="/login" method="POST">
+        <input type="hidden" name="_csrf" value="{{ csrfToken }}" />
+        <input type="hidden" name="challenge" value="{{ challenge }}" />
+        <input type="email" id="email" name="email" placeholder="email@foobar.com" />
+        <input type="password" id="password" name="password" />
+        <span>{{ error }}</span>
+        <input type="checkbox" id="remember" name="remember" value="1" />
+        <label for="remember">Remember me</label>
+
+        <input type="submit" id="accept" name="submit" value="Log in" />
+    </form>
+</body>
+
+</html>
